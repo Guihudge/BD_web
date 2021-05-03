@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Page principale</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style1.css')}}">
+    </head>
+
+    <body>
+        <h3>Choisissez où vous voulez aller</h3>
+
+        <a href="{{url_for('hello')}}">Hello</a>
+        <br>
+        <a href="{{url_for('miserables')}}">Misérables</a>
+    </body>
+</html>
