@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Nombre mystère</title>
+        <!-- <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style1.css')}}"> -->
+    </head>
+
+    <body>
+        <h3>Trouver le nombre</h3>
+        {%if result %} <p>{{result}}</p> {%endif%}
+        {%if compteur %} <p>Coup n°{{compteur}}</p> {%endif%}
+        
+        <form action="{{url_for('processe')}}">
+            <label for="nombre">Nombre entre {{borne_min}} et {{borne_max}}:</label>
+            <input type="number" id="nombre" name="nombre" min="{{borne_min}}" max="{{borne_max}}">
+            <input type="submit" value="Soumettre" />
+        </form>
+        <br>
+        <br>
+        <form action="{{url_for('reset')}}">
+            <input type="submit" value="reset" />
+        </form>
+    </body>
+</html>

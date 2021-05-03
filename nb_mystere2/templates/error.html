@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Erreur</title>
+    </head>
+
+    <body>
+        <h2>Erreur</h2>
+        <p>Une erreur est survenue.</p>
+        {%if error_cause%} <p>erreur : {{error_cause}}</p> {%endif%}
+
+        <form action="{{url_for('start')}}">
+            <input type="submit" value="Menu" />
+        </form>
+    </body>
+</html>

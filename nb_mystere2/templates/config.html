@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf_8">
+        <title>Page de configuration</title>
+    </head>
+
+    <body>
+        <h3>Page de configuration</h3>
+        <form action="{{url_for('config_save')}}">
+            <label for="nb_coup">Nombre de coup: </label>
+            <input type="number" id="nb_coup" name="nb_coup" value="10">
+            <br>
+            <label for="borne_min">Borne min: </label>
+            <input type="number" id="borne_min" name="borne_min" value="0">
+            <br>
+            <label for="borne_max">Borne max:</label>
+            <input type="number" id="borne_max" name="borne_max" value="100">
+            <br>
+            <input type="submit" value="Enregistrer"/>
+        </form>
+    </body>
+</html>

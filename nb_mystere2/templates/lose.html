@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Nombre mystère</title>
+        <!-- <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style1.css')}}"> -->
+    </head>
+
+    <body>
+        <h3>Tu as perdu.</h3>
+        {%if nb %} <p>Le nombre recherché était : {{nb}} .</p> {%endif%}
+        <br>
+        <br>
+        <form action="{{url_for('start')}}">
+            <input type="submit" value="reset" />
+        </form>
+    </body>
+</html>
