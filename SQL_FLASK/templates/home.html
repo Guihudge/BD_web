@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Accueil Dragon</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style1.css')}}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+    <h3>Choisissez le nom du dragon:</h3>
+        <form action="{{url_for('dragon_after')}}">
+            <ul>
+
+                <li class="Information"><select name="dragon_name">
+                    {% for item in liste_dragon %}
+                        <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                </select></li>
+                <li class="Information"><input type="checkbox" name="alimentation" id="alimentation">
+                <label for="alimentation">Afficher le régime alimentaire</label></li>
+                <li class="Information"><input type="checkbox" name="amours" id="amours">
+                <label for="amours">Afficher les prétandants</label></li>
+                <li class="Information"><input type="submit", value="Envoyer"></li>
+            </ul>
+        </form>
+    </body>
+</html>

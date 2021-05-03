@@ -1,0 +1,44 @@
+
+html {
+	margin: 5;
+	padding: 0;
+	}
+body {
+	font-family: 'Tangerine', cursive;
+	line-height: 1.88889;
+	color: #555753; 
+	margin: 15px;
+	padding: 0;
+    background-color: #f0eeee;
+	}
+p { 
+	margin-top: 0; 
+	text-align: justify;
+	}
+h3 { 
+	font-size: 3.5em;
+	letter-spacing: 1px; 
+	margin-bottom: 0px;
+	margin-top: 0px;
+	color: #7D775C;
+	line-height: 120%;
+	}
+
+li{
+	font-size: 1.9em;
+	line-height: 110%;
+}
+
+.Information {
+	list-style-type: none;
+
+}
+.Nourriture{
+	list-style-type: none;
+
+}
+
+.Amours {
+	list-style-type: none;
+
+}

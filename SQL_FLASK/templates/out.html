@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultats : {{dragon.nom}}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style1.css')}}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% macro expand_list_with_style(a_list, style) %}
+        <ul>
+            {% if a_list|length > 0 %}
+                {% for item in a_list %}
+                    <li class="{{style}}">{{item}}</li>
+                {% endfor -%}
+            {% else %}
+                <li class="{{style}}">Aucune</li>
+            {% endif -%}
+        </ul>
+    {%- endmacro -%}
+
+
+    <h3>Information Générale</h3>
+    <ul>
+        <li class="Information">Nom : {{dragon.nom}}</li>
+        <li class="Information">Sexe:
+        {% if dragon.Sexe == "F" %}
+            Femelle
+        {% else %}
+            Male
+        {% endif %}
+        </li>
+        <li class="Information">Taille: {{dragon.Longueur}} m </li>
+        <li class="Information">Nombre d'écailles: {{dragon.Ecailles}}</li>
+        <li class="Information">Crache du feu:
+        {% if dragon.CracheFeu == "O" %}
+            Oui
+        {% else %}
+            Non
+        {% endif %}
+        </li>
+    </ul>
+
+    {% if alimentation %}
+        <h3>Alimentation</h3>
+        {{ expand_list_with_style(alimentation_data, "Nourriture") }}
+    {% endif -%}
+
+    {% if amours %}
+        <h3>Prétendant{% if amours_data|length > 1 %}s{% endif %}</h3>
+        {{ expand_list_with_style(amours_data, "Amours") }}
+    {% endif %}
+</body>
+</html>
